@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include <QtSql>
+#include <QMessageBox>
 
 namespace Ui {
 class OrdersWindow;
@@ -14,11 +15,17 @@ class OrdersWindow : public QDialog
 
 public:
     explicit OrdersWindow(QWidget *parent = 0);
-     void initData();
+
     ~OrdersWindow();
 
 private:
     Ui::OrdersWindow *ui;
+    void initData();
+    void updateModel();
+
+
+private slots:
+    void updateOrder();
 
 };
 
