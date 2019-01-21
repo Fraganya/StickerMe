@@ -63,10 +63,10 @@ void OrdersWindow::updateOrder()
         query.prepare("UPDATE orders set has_paid=1,delivered=1 WHERE id=?");
     }
     else if(ui->cbxDelivered->isChecked()){
-         query.prepare("UPDATE orders set has_paid=1 WHERE id=?");
+         query.prepare("UPDATE orders set delivered=1 WHERE id=?");
     }
     else if(ui->cbxPaid->isChecked()){
-         query.prepare("UPDATE orders set delivered=1 WHERE id=?");
+         query.prepare("UPDATE orders set has_paid=1 WHERE id=?");
     }
     else{
         QMessageBox::critical(this,"Error","There is nothing to update");
